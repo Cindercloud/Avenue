@@ -6,6 +6,12 @@ cache:
   directories:
   - ".autoconf"
   - "$HOME/.m2"
-#  file:
-     #- web/build/libs/avenue.jar
-     #- web/src/main/docker/Dockerfile
+deploy:
+  provider: releases
+  api_key:
+    secure: DiPUxnNZ1rXTN1FMc8I4brZx+CcVzYXnW/zeJudz5R5y8QHaCBkRK2yREJ2v950obC2uzGFUppBv7BPJRjHNHCS01YD5EZiDLyAR2DiSlEsTEan5jyf1BTdoDic+u3sZenyJ+/BMnhxaIuB1+Jj80V2bFM37P9ZIW5Psk4Rh9x7KAH8VC+IZhkmPEEbt/C1QMElsGz15hOB9l6qvi9rScrVDrGQo8PoJvPa8D/dgK8y32z3KD3HBET0yLE6njCPxsMkdSOR8UHH5Rusre8BzRD4WPW91jJ4fXHPS6MRmpHvNJXunQrujUYpZ/WFSnNPlLeHitjSLOA/163dkKjB4fl3gDyErr1VOLmphX1quqc//A5Ill1PCtWJOuKjtOnRTGaJo6jPp/Lj3k5QXZEbuDjRl8j4vPZ2ndOOBMEfEsZrxLD0yEnH4idkpg5M2F6UmH8MR9fAQYl+0F0o6v528PmxKFYMgVQOyYLTRy5SiCxX7+36p/3C3vcfHwAjk9FlqYC/B5B6pjDHyYj/Y+ZPGL5v2B/n8wcBaPIsieUT5iGiLPzsyXIiR2qLgPSdErGpAFzeTK9/gBy6X/lGq1AG7OAibHtSjxBa52QgQtr/PvaeWPbhYUDzli83N89rxgiHnzHHBQU+xTr8+5zpMDhyhsRmPIPz+cewa3/C9WtvFhms=
+  file:
+    - web/build/libs/avenue.jar
+    - web/src/main/docker/Dockerfile
+  on:
+    repo: Cindercloud/Avenue

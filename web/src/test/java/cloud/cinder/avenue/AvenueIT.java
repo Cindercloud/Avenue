@@ -11,13 +11,13 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = AvenueApp.class)
-public class AirstripIT {
+public class AvenueIT {
 
     @Autowired
     private Environment env;
 
     @Test
-    public void airstripCorrectlyStarts() throws Exception {
-        assertThat(env.getProperty("spring.application.name")).isEqualTo("avenue");
+    public void avenueCorrectlyStarts() throws Exception {
+        assertThat(env.getProperty("spring.application.name")).isEqualTo("Avenue");
     }
 }
