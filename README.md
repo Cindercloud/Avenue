@@ -4,13 +4,13 @@ Avenue [![Build Status](https://travis-ci.org/Cindercloud/Avenue.svg?branch=mast
 > API Access as a Service
 
 
-##Building
+## Building
 
 ```
 gradle clean build
 ```
 
-##Running
+## Running
 
 ```
 gradle bootRun
