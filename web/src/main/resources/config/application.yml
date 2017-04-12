@@ -1,0 +1,32 @@
+spring:
+    application:
+        name: Avenue
+    messages:
+        basename: i18n/messages
+    thymeleaf:
+        mode: XHTML
+
+server:
+    port: 8083
+    session:
+        cookie:
+            http-only: true
+
+debug: true
+
+logging:
+  level:
+    org.springframework.security: DEBUG
+
+cloud:
+    cinder:
+        peapol:
+            login-url: http://localhost:9999/login
+        switch:
+            base-url: http://localhost:8080
+        airstrip:
+            base-url: http://localhost:8081
+        ethereum:
+            base-url: http://localhost:8082
+        avenue:
+            base-ur: http://localhost:8083

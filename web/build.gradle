@@ -1,0 +1,48 @@
+apply plugin: 'org.springframework.boot'
+apply plugin: "com.moowork.gulp"
+
+dependencyManagement {
+    imports {
+        mavenBom "org.springframework.cloud:spring-cloud-netflix:${theSpringCloudNetflixVersion}"
+        mavenBom "io.spring.platform:platform-bom:${theSpringPlatformBomVersion}"
+    }
+}
+
+configurations {
+    compile {
+        exclude module: 'jsr311-api'
+    }
+}
+
+dependencies {
+
+    //web
+    compile("org.springframework.boot:spring-boot-starter-thymeleaf")
+    compile group: 'com.squareup.okhttp', name: 'okhttp', version: '2.7.5'
+
+    //auth0
+    compile("com.auth0:auth0-spring-security-api:0.3.3")
+    compile("com.auth0:auth0-spring-security-mvc:1.2.3")
+    compile("com.auth0:auth0:0.4.0")
+
+    //utils
+    compile('commons-validator:commons-validator:1.4.0')
+
+    //testing
+    testCompile("org.springframework.boot:spring-boot-starter-test")
+    testCompile 'org.assertj:assertj-core:3.4.1'
+}
+
+jar {
+    baseName = 'avenue'
+    version = null
+}
+
+springBoot {
+    executable = true
+}
+
+bootRun {
+    systemProperties System.properties
+    addResources = true
+}

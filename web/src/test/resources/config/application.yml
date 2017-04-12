@@ -1,0 +1,40 @@
+spring:
+    application:
+        name: Avenue
+    jackson:
+        serialization.write_dates_as_timestamps: false
+    mvc:
+        favicon:
+            enabled: false
+    thymeleaf:
+        mode: XHTML
+security:
+    basic:
+        enabled: false
+
+cloud:
+    cinder:
+        peapol:
+            login-url: http://localhost:9999/login
+        switch:
+            base-url: http://localhost:8080
+        airstrip:
+            base-url: http://localhost:8081
+        ethereum:
+            base-url: http://localhost:8082
+
+auth0:
+  domain: cindercloud.eu.auth0.com
+  issuer: https://cindercloud.eu.auth0.com/
+  clientId: clientId
+  clientSecret: clientSecret
+  onLogoutRedirectTo: /
+  securedRoute: /dashboard**
+  loginCallback: /callback
+  loginRedirectOnSuccess: /
+  loginRedirectOnFail: /login
+  servletFilterEnabled: true
+  signingAlgorithm: HS256
+  authorityStrategy: ROLES
+  base64EncodedSecret: false
+  defaultAuth0WebSecurityEnabled: false
